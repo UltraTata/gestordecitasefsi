@@ -14,11 +14,15 @@ export default function Form(){
     });
 
     const modificar = (event) => {
-        let newCita = cita;
+        let newCita = {
+            mascota: cita.mascota,
+            dueno: cita.dueno,
+            fecha: cita.fecha,
+            hora: cita.hora,
+            sintoma: cita.sintoma
+        };
         newCita[event.target.name] = event.target.value;
-        console.log(newCita)
         setCita(newCita)
-        console.log(cita)
     }
 
     const add = () => {
@@ -31,7 +35,7 @@ export default function Form(){
             <label>Nombre Mascota</label>
             <input type="text" name="mascota" value={cita.mascota} onChange={modificar} class="u-full-width" placeholder="Nombre Mascota" />
             <label>Nombre Dueño</label>
-            <input type="text" name="dueño" value={cita.dueno} onChange={modificar} class="u-full-width" placeholder="Nombre dueno de la mascota" />
+            <input type="text" name="dueno" value={cita.dueno} onChange={modificar} class="u-full-width" placeholder="Nombre dueno de la mascota" />
             <label>Fecha</label>
             <input type="date" name="fecha" value={cita.fecha} onChange={modificar} class="u-full-width" />
             <label>hora</label>

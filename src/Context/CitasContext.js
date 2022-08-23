@@ -6,13 +6,19 @@ export function CitasProvider(props){
     const [citas, setCitas] = useState([]);
 
     const addCita = (cita) => {
-        let newCitas = citas;
+        let newCitas = [];
+        citas.map(
+            (c) => newCitas.push(c)
+        );
         newCitas.push(cita);
         setCitas(newCitas);
     }
 
     const deleteCita = (i) => {
-        let newCitas = citas;
+        let newCitas = [];
+        citas.map(
+            (c) => newCitas.push(c)
+        );
         newCitas.splice(i,1);
         setCitas(newCitas);
     }
