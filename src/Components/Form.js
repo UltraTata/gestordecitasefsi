@@ -1,9 +1,6 @@
-import {React, useContext, useState} from "react";
-import { CitasContext } from "../Context/CitasContext.js";
+import {React, useState} from "react";
 
-export default function Form(){
-
-    const {addCita} = useContext(CitasContext);
+export default function Form(params){
 
     const [cita, setCita] = useState({
         mascota: "",
@@ -26,7 +23,7 @@ export default function Form(){
     }
 
     const add = () => {
-        addCita(cita);
+        params.addCita(cita);
     }
 
     return(

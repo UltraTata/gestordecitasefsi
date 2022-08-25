@@ -1,12 +1,7 @@
-import { useContext } from "react";
-import {CitasContext} from "../Context/CitasContext.js";
-
 export default function TarjetaCita(params){
-    
-    const {deleteCita} = useContext(CitasContext);
 
     const borrar = () => {
-        deleteCita(params.i);
+        params.deleteCita(params.i);
     }
 
     return(
